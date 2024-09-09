@@ -33,7 +33,7 @@ Query Results: 1-20 of many
 
 
 
-sample_resaturants: restaurants
+sample_resaturants: neigborhoods
 Filter data by burroughs using the "$or" operator
 { $or: [{ borough: "Manhattan" }, { borough: "Statan Island" }] }
 Query Results: 1-20 of many
@@ -60,6 +60,14 @@ Filter data by using the "$eq" operator - show all quasou that are equal to "dep
 Query Results: 1-20 of many
 
 
-$not
+sample_resaturants: neigborhoods
+Filter data by using the "$not" operator - show all resaturants that are not in Manhattan
+{ borough: { $not: /^M.*/ } }
+Query Results: 1-20 of many
 
-$nin
+
+Sample_airbnb: listingsAndReviews
+Filter data by using the "$nin" operator - shool all property types that are "apartHotel" only
+{ property_type: { $nin: ["House", "Condominium", "Apartment"] } }
+Query Results: 1-20 of many
+
